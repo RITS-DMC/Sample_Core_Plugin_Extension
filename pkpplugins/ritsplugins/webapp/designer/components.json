@@ -1,0 +1,65 @@
+{
+	"components": [
+		{
+			"id": "ritsplugins",
+			"type": "VIEW_PLUGIN",
+			"allowMultipleInstances": false,
+			"name": "pkp.ext.ritsplugins.ritsplugins",
+			"propertyEditor": "pkp.ext.ritsplugins.ritsplugins.builder.PropertyEditor",
+			"i18n": "pkp.ext.ritsplugins.ritsplugins.i18n.i18n",
+            "productionProcessEnabled": true,
+           "productionProcessTitle": "ritsplugins",
+			"supportedPodTypes": ["WORK_CENTER","OPERATION","ORDER"]
+		},
+		{
+			"id": "pkpplugin",
+			"type": "VIEW_PLUGIN",
+			"allowMultipleInstances": false,
+			"name": "pkp.ext.ritsplugins.pkpplugin",
+			"propertyEditor": "pkp.ext.ritsplugins.pkpplugin.builder.PropertyEditor",
+			"i18n": "pkp.ext.ritsplugins.pkpplugin.i18n.i18n",
+            "productionProcessEnabled": true,
+           "productionProcessTitle": "pkpplugin",
+			"supportedPodTypes": ["WORK_CENTER","OPERATION","ORDER"]
+		},
+		{
+			"id": "assemblyPointPluginV1",
+			"type": "VIEW_PLUGIN",
+			"allowMultipleInstances": false,
+			"name": "pkp.ext.ritsplugins.assemblyPointPlugin",
+			"propertyEditor": "pkp.ext.ritsplugins.assemblyPointPlugin.builder.PropertyEditor",
+			"i18n": "pkp.ext.ritsplugins.assemblyPointPlugin.i18n.i18n",
+            "productionProcessEnabled": true,
+           "productionProcessTitle": "assemblyPointPlugin",
+			"supportedPodTypes": ["WORK_CENTER","OPERATION","OTHER"]
+		}
+	],
+	"extensions":[{
+		"provider": "pkp/ext/ritsplugins/assemblyPointExtensionProvider/ExtensionProvider",
+		"controller": "sap.dm.dme.assyplugins.assemblyPointPlugin",
+		"inclusions": [
+			{
+				"pods": [
+					"TEST_WC_POD","SERNP_WC_POD"
+				],
+				"plants": [
+					"PP01"
+				]
+			}
+		]
+	},
+	{
+		"provider": "pkp/ext/ritsplugins/assemblyPointExtensionProvider/ExtensionProvider",
+		"controller": "pkp.ext.ritsplugins.assemblyPointPlugin",
+		"inclusions": [
+			{
+				"pods": [
+					"WORK CENTER POD"
+				],
+				"plants": [
+					"PP01"
+				]
+			}
+		]
+	}]
+}

@@ -1,0 +1,14 @@
+{
+  "welcomeFile": "/ritsplugins/index.html",
+  "authenticationMethod": "none",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/ritsplugins/(.*)$",
+      "target": "$1",
+      "localDir": "webapp"
+    }
+  ]
+}
